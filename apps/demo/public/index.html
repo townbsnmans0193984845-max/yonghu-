@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>职兼兼职兼平台 MVP Demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <div>
+        <h1>职兼兼职兼平台 MVP</h1>
+        <p>基于技术文档的可运行演示版（H5 + 简易管理视图）</p>
+      </div>
+      <div class="session">
+        <span id="session-user">未登录</span>
+        <button id="logout" class="ghost">退出</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="card">
+        <h2>注册 / 登录</h2>
+        <div class="grid">
+          <label>
+            手机号
+            <input id="phone" placeholder="13800000002" />
+          </label>
+          <label>
+            姓名/机构
+            <input id="name" placeholder="输入昵称或公司" />
+          </label>
+          <label>
+            角色
+            <select id="role">
+              <option value="worker">兼职者</option>
+              <option value="recruiter">招聘方</option>
+            </select>
+          </label>
+        </div>
+        <div class="actions">
+          <button id="register">快速注册</button>
+          <button id="login" class="ghost">短信登录</button>
+        </div>
+        <p class="hint">内置账号：招聘方 13800000001 / 兼职者 13800000002</p>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <h2>岗位广场</h2>
+          <button id="refresh-jobs" class="ghost">刷新</button>
+        </div>
+        <div id="job-list" class="list"></div>
+      </section>
+
+      <section class="card">
+        <h2>招聘方：发布岗位</h2>
+        <div class="grid">
+          <label>
+            标题
+            <input id="job-title" placeholder="展会引导员" />
+          </label>
+          <label>
+            薪资(元/小时)
+            <input id="job-salary" type="number" placeholder="25" />
+          </label>
+          <label>
+            位置
+            <input id="job-location" placeholder="上海市" />
+          </label>
+          <label>
+            需求人数
+            <input id="job-workers" type="number" placeholder="3" />
+          </label>
+        </div>
+        <label>
+          描述
+          <textarea id="job-description" rows="3" placeholder="工作内容与要求"></textarea>
+        </label>
+        <div class="actions">
+          <button id="create-job">发布岗位</button>
+        </div>
+        <div id="recruiter-metrics" class="metrics"></div>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <h2>我的报名</h2>
+          <button id="refresh-applications" class="ghost">刷新</button>
+        </div>
+        <div id="application-list" class="list"></div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <p>Demo 仅做流程验证，不含真实支付与持久化存储。</p>
+    </footer>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
